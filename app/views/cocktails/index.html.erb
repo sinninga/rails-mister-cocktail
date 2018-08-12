@@ -1,16 +1,16 @@
 <body>
   <div class="navbar-wagon">
     <a href="/" class="navbar-wagon-brand">
-      <img src="images/logo.png" alt="logo">
+      <img src="https://thumbs.gfycat.com/NextSimplisticAmericanshorthair-small.gif" alt="logo">
     </a>
     <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Get a drink</a>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Share a drink</a>
       <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <img src="https://kitt.lewagon.com/placeholder/users/sinninga" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Dashboard</a></li>
@@ -33,9 +33,24 @@
 
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1440,w_2560,x_0,y_0/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1517521303/180131-wondrich-bad-cocktail-tease_wghhv8');">
     <div class="banner-content">
+      <div class="content">
+  <div class="content__container">
+    <p class="content__container__text">
+      You like
+    </p>
+
+    <ul class="content__container__list">
+      <li class="content__container__list__item">Whiskey?</li>
+      <li class="content__container__list__item">Rum?</li>
+      <li class="content__container__list__item">Vodka?</li>
+      <li class="content__container__list__item">Tequila?</li>
+
+    </ul>
+  </div>
+</div>
       <h1>Drink Up!</h1>
       <p>Keep it classy or get loaded... the choice is yours</p>
-      <a class="btn btn-primary btn-lg" <%= link_to 'Add a drink', new_cocktail_path %></a>
+      <a class="btn btn-danger btn-lg" <%= link_to 'Add a drink', new_cocktail_path %></a>
     </div>
   </div>
 
@@ -45,16 +60,19 @@
       <% @cocktails.each do |c| %>
       <div class="col-xs-12 col-sm-4">
         <!-- insert <div class="card"> -->
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://punchdrink.com/wp-content/uploads/2017/04/Slide-Clover-Club-Egg-White-Cocktails-Boston-Sour-Clover-Club-Recipe.jpg');">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://upload-assets.vice.com/files/2016/05/19/1463692808com_gifs_karan_singh_appy_fizz_sagmeister_walsh_xT4uQg3yhJ5Eb0ES5i.gif?resize=1050:*');">
             <div class="card-description">
-              <h2><%= link_to c.name, cocktail_path(c) %></h2>
+              <h2><%= c.name %></h2>
             </div>
-            <a class="card-link" href="#" ></a>
+            <a class="card-link" <%= link_to c.name, cocktail_path(c) %>
+            </a>
           </div>
         </div>
         <% end %>
       </div>
     </div>
+
+
 
 
 

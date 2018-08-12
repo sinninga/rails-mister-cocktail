@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
- before_action :find_cocktail, only: [:show]
+ before_action :find_cocktail, only: [:show, :destroy]
 
   def index
     @cocktails = Cocktail.all
@@ -24,6 +24,11 @@ class CocktailsController < ApplicationController
         format.json { render json: @cocktail.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @cocktail.destroy
+    redirect_to root_path
   end
 
   private
